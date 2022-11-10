@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="lesson7/script.js"></script>
+</head>
+<body>
+    <div class="contanier">
+        <div class="content">
+            <div class="form_fill">
+                <input id="email" type="" placeholder="Email">
+                <button onclick="buttonEmailSend()">Send</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        class FormEmail {
+            isForm(email){
+                if (email.includes("@")){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+
+
+        function buttonEmailSend (){
+            const formValue = document.getElementById("email").value;
+
+            const formEmail = new FormEmail ();
+            const isForm = formEmail.isForm(formValue);
+
+            if (isForm){
+                alert ('Імейл правильний');
+            } else {
+                alert('Імейл не правильний')
+            }
+        }
+    </script>
+</body>
+</html>
